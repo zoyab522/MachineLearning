@@ -6,6 +6,7 @@
         <title>
             Machine Learing Final Report
         </title>
+        <script src="Report.js" defer></script>
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body>
@@ -118,7 +119,8 @@
                 However, the data couldn’t be downloaded directly from the website, so we had to access it through an API call. Here's an
                 example of what the data from the website looks like:</p>
                 <br>
-                <img src="ML_Images/bluealliance.png" id="bluealliance">
+                <center>                <img src="ML_Images/bluealliance.png" id="bluealliance">
+                </center>
                 <br>
                 <br>
 
@@ -131,23 +133,25 @@
                 This was just the data from the first few matches, but it shows an example of one of the features we used. 
             </p>
             <br>
-            <img src="ML_Images/sampledata.png" id="sampledata">
+            <center>            <img src="ML_Images/sampledata.png" id="sampledata">
+            </center>
             <br>
-            <br>
+            <br> </div>
 
+            <div class="datatwo">
             <h1>Formatting the Data</h1>
             <p>In our dataset, there are 407 matches that make up the training data, and for each match, there are 6 teams and 10 attributes or 
                 properties for each team. So, our data started off by being a 3 dimensional array of matches, teams, and attributes.
                 We had to “flatten the data,” which basically meant making the 6 teams and 10 attributes one dimension of the array 
                 rather than two separate dimensions, so we ended up with a 2D array [470, 60]. See the images below. 
             </p>
-            <img src="ML_Images/3d.png" id="threed">
-            <img src="ML_Images/2d.png" id="twod">
+            <center><img src="ML_Images/3d.png" id="threed"></center>
+            <center><img src="ML_Images/2d.png" id="twod"></center>
 
             <p>
-                The 10 properties of each team that’s included in this data are auto run moving off, auto run scale, auto run switch, scale ownership, 
-                switch ownership, endgame, fouls, defense, and strategy.
-                <br>
+                The 10 properties of each team that’s included in this data 
+                are auto run moving off, auto run scale, auto run switch, scale ownership, 
+                switch ownership, endgame, fouls, defense, and strategy. 
                 These 10 properties are important to have in our data because these are the factors that made up the game strategy/setup from the games 
                 we’re pulling data from. The first three properties relate to the autonomous game period and the ownership properties relate to the teleop 
                 game period. The defense and strategy properties aren’t point based, but are important to the nature of 
@@ -158,7 +162,6 @@
                 being a higher chance of winning and values closer to 0.5 indicating a closer match. Similarly, values less than 0.5 would then indicate 
                 the red alliance winning and values closer to 0 would be greater gaps in alliance scores and more clearly defined victories.
                 <br>
-
             </p>
         </div>
 
@@ -173,13 +176,13 @@
 
         <div class = "network">
             <h1>Network Layers</h1>
-            <p> 
                 Since our network needed to take in multiple factors for each team and match to predict a certain outcome, 
                 we opted to configure our network with dense layers. 
                 <br>
                 <br>
                 <strong>
-                We built our model using 5 layers with differing amounts of nodes on each layer. 
+                We built our model using 5 layers with 9 nodes on the first layer, 18 nodes on the second layer,
+                9 nodes on the third layer, 3 nodes on the fourth layer, and 1 node on the last layer.
                 Our last (output) layer only has one node, because we only want the network to output one value. 
                 This value is between 0 and 1 and should represent the values in our label array. 
                 The closer the network is to 0, the more it’s predicting that the red alliance won and the closer it is to 1, 
@@ -191,9 +194,112 @@
                 <strong>k-number of partitions</strong>. The model trains on all but 1 partition, and then validates itself on the remaining partition. 
                 This allows the model to make the most of a limited amount of data. Using the k-fold method allows the network to see more 
                 comprehensive data and train better/ have better accuracy across the whole dataset. We were able to get down to a reasonably low loss.
-
-            </p>
         </div>
+
+        <div class = "FifthHead">
+            <div class = "FifthHeadText">
+    
+            <h1>R E S U L T S</h1>
+            <br>
+            <br>
+            </div>
+        </div>
+
+        <div class="results">
+            <h1>Results</h1>
+                We found that 5 partitions worked the best because it set aside enough data for validation, while also giving the neural 
+                network a lot of data to work with. We found that around 7 epochs or iterations, the model started to slightly overfit, meaning 
+                the loss went up. The model began to get too familiar with the training data. 
+                Below, you'll find our results for folds 1-5 (1 graph for each fold). 
+                <br>
+                <br>
+                As you can see in the first graph, both the blue 
+                loss and the red validation loss quickly descend to an almost straight line, but the validation loss is significantly above the 
+                loss from the training set. This is because the validation is new data that the model is unfamiliar with, so the model will have 
+                greater losses. Fold 2 means that the epochs were run again, but with a different partition excluded for validation. In Fold 2, 
+                the neural network continued to improve, as both losses start from a lower position. Fold 3 is interesting because the blue loss 
+                seems to start from higher point there, but the scale is actually much smaller. In Folds 4 and 5, the model also appears to overfit, 
+                as the losses actually do start higher. 
+            </p>
+            <br>
+            <br>
+                        <!-- Container for the image gallery -->
+            <div class="container">
+
+                <!-- Full-width images with number text -->
+                <div class="mySlides">
+                <div class="numbertext">1 / 5</div>
+                    <center><img src="ML_Images/foldone.png"></center>
+                </div>
+            
+                <div class="mySlides">
+                <div class="numbertext">2 / 5</div>
+                    <center><img src="ML_Images/foldtwo.png" ></center>
+                </div>
+            
+                <div class="mySlides">
+                <div class="numbertext">3 / 5</div>
+                    <center><img src="ML_Images/foldthree.png" ></center>
+                </div>
+            
+                <div class="mySlides">
+                <div class="numbertext">4 / 5</div>
+                    <center><img src="ML_Images/foldfour.png" ><center>
+                </div>
+            
+                <div class="mySlides">
+                <div class="numbertext">5 / 5</div>
+                    <center><img src="ML_Images/foldfive.png" ></center>
+                </div>
+            
+                <!-- Next and previous buttons -->
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            
+                <!-- Image text -->
+                <div class="caption-container">
+                <p id="caption"></p>
+                </div>
+            
+                <!-- Thumbnail images -->
+                <div class="row">
+                <div class="column">
+                    <img class="demo cursor" src="ML_Images/foldone.png" style="width:100%" onclick="currentSlide(1)" alt="Fold One Results">
+                </div>
+                <div class="column">
+                    <img class="demo cursor" src="ML_Images/foldtwo.png" style="width:100%" onclick="currentSlide(2)" alt="Fold Two Results">
+                </div>
+                <div class="column">
+                    <img class="demo cursor" src="ML_Images/foldthree.png" style="width:100%" onclick="currentSlide(3)" alt="Fold Three Results">
+                </div>
+                <div class="column">
+                    <img class="demo cursor" src="ML_Images/foldfour.png" style="width:100%" onclick="currentSlide(4)" alt="Fold Four Results">
+                </div>
+                <div class="column">
+                    <img class="demo cursor" src="ML_Images/foldfive.png" style="width:100%" onclick="currentSlide(5)" alt="Fold Five Results">
+                </div>
+                
+                </div>
+            </div>
+
+            <p>
+                The graphs show that the blue loss and red validation loss center around 0.05 and 0.03 respectively, which is a reasonable loss 
+                for a complex problem like ours.
+            </p>
+            
+        </div>
+
+        <div class = "SixthHead">
+            <div class = "SixthHeadText">
+    
+            <h1>C O N C L U S I O N S</h1>
+            <br>
+            <br>
+            </div>
+        </div>
+
+
+    
 
 
             
