@@ -1,0 +1,85 @@
+.strong {
+    font-style: italic;
+}
+
+div.HomepageHead {
+    background-image: url(ML_Images/frcimage.jpeg); 
+    background-repeat: no-repeat;  
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    margin-left: 0px;
+    margin-right: 0px;
+    opacity: 0.8;
+}
+
+div.SecondHead {
+    background-image:url(ML_Images/scouting.jpeg);
+    background-repeat: no-repeat;  
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    margin-left: 0px;
+    margin-right: 0px;
+    opacity: 0.8;
+}
+
+div.FourthHead {
+    background-image:url(ML_Images/network.jpeg);
+    background-repeat: no-repeat;  
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    margin-left: 0px;
+    margin-right: 0px;
+    opacity: 0.8;
+}
+
+div.HeadText, div.SecondHeadText, div.ThirdHeadText, div.FourthHeadText {
+    background-color:rgba(12, 12, 12, 0.719);
+    background-attachment:fixed;
+    background-size: cover;
+    padding-top: 7em;
+    padding-bottom: 7em;
+    padding-left: 4em;
+    padding-right: 4em;
+    line-height: 160%;
+    text-align: center;
+    margin-left: 0px;
+    margin-right: 0p;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+}
+
+div.ThirdHead {
+    background-image:url(ML_Images/dataone.jpeg);
+    background-repeat: no-repeat;  
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    margin-left: 0px;
+    margin-right: 0px;
+    opacity: 0.8;
+}
+
+div.intro, div.Importance, div.scouting, div.dataintro, div.network {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 80px;
+    line-height: 25px;
+}
+
+img#sampledata {
+    height: 400px;
+}
+
+img#bluealliance {
+    height: 370px;
+}
+
+img#threed, img#twod {
+    height: 300px;
+}
+
+
+
+

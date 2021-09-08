@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="MLStyle.css">
+        <meta charset = "utf-8">
+        <title>
+            Machine Learing Final Report
+        </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+
+        <div class = "HomepageHead">
+        <div class = "HeadText">
+
+        <h1>P R E D I C T I N G &nbsp; W H O &nbsp; W I L L &nbsp; W I N &nbsp; 
+            <br>
+            <br>
+            I N &nbsp; A &nbsp; R O B O T I C S &nbsp; M A T C H</h1>
+        <p>Lori Brown, Sonia Akkiangadi, Zoya Bawangaonwala</p>
+        <br>
+        <br>
+        <a href="https://www.firstinspires.org/robotics/frc"><button><strong>FIRST</strong> Robotics</button></a>
+        </div>
+        </div>
+
+
+        <div class = "intro">
+            <h1>What Is <strong>FIRST</strong>?</h1>
+            <p>Our project was based on predicting which alliance would win in a robotics match. 
+                So, to understand our goal, you’ll have to have a basic understanding of the kind of robotics we’re talking about. 
+                <strong>FIRST</strong> is a non-profit organization. 
+                It comprises different levels of robotics for different age groups and, of these, offers two programs for high schoolers- 
+                <strong>FIRST</strong> Robotics Competition (FRC) and <strong>FIRST</strong> Tech Challenge (FTC) which are more commonly known as FRC and FTC. 
+                FRC generally seems to require a bit more game strategy and offers more statistics about matches and 
+                teams given the more complex game structure. 
+                <br>
+                <br>
+                For context, FRC robots are around 5 feet tall, whereas FTC robots are only 18x18x18 inches.  
+                The respective game fields match this size difference with FRC fields being about as large as a basketball court and FTC fields being 
+                only 12x12 ft. Since the fields and robots are larger in FRC, this allows the games to be more intricate and have more elements.</p>
+        </div>
+
+        <div class= "Importance">
+            <h1>The Game</h1>
+            <p>
+            We chose to make the focus of our project the 2018 season because we had a lot of previous knowledge about this specific game. 
+            FRC games are played between two alliances (red and blue) consisting of three teams each. Each game is split into two periods. 
+            The autonomous period is a pre-programmed first 15 seconds of gameplay where the robots on each alliance try to complete different tasks that are 
+            valued differently for points based on difficulty. The next 2 minutes and 15 seconds of gameplay are the teleop - or driver controlled - period of 
+            the game. This is the part of the game where teams control their robots using game controllers and complete tasks while also obstructing the opposing 
+            alliance's ability to score.
+            <br>
+            <br>
+            The 2018 game involved the alliances competing for “ownership” of three balancing structures—two switches and one scale. To achieve 
+            “ownership,” an alliance had to score more powercubes (which were basically milk crates) than the other alliance by placing them into their 
+            respective sides on each structure. The switches were placed on the floor and easy to score. Each alliance has a switch on their side of the field. 
+            If they have ownership of their switch, they earn points—otherwise, they do not earn/lose points and neither does the other alliance. Thus, 
+            the switches are intended for defense, and can sometimes be highly competitive. The scale is elevated and thus more difficult to score, and 
+            whichever alliance has ownership of the scale earns a set amount of points per second. Therefore, the game is all about scoring as many 
+            powercubes as possible while simultaneously preventing the other alliance from doing the same, so defense played a significant role in this game.
+
+            </p>
+        </div>
+
+        <div class = "SecondHead">
+            <div class = "SecondHeadText">
+    
+            <h1>S C O U T I N G</h1>
+            <br>
+            <br>
+            </div>
+        </div>
+
+        <div class = "scouting">
+            <h1>What is Scouting?</h1>
+            <p>The inspiration for our project came from a major part of robotics competitions that’s not related to actual gameplay. 
+                <strong>Scouting</strong> (especially for top teams) is incredibly important to advancing to the next level of competition. 
+                Scouting involves teams trying to learn and observe as much as they can about other teams throughout the competition. 
+                Qualifying matches at competitions are random pair ups of teams, but teams advancing to the semifinals assemble their own alliances. 
+                Our idea was that if we could get our network to predict the probability of which alliance would win a match, 
+                we could—in theory—extend that to apply to scouting principles and use a neural network to predict which teams would 
+                be the best on a certain alliance based on data from that competition. 
+                Two apps/websites exist for FTC and FRC that record statistics on matches as they’re played, but being able to access a 
+                network for scouting that could predict the best teams to have on an alliance would be beneficial to the robotics community. 
+                <br>
+                <br>
+                Essentially, the network would do all the hard work of taking the raw data and statistics and turn it into which teams would work together the best. 
+                Our goal was to see the accuracy at which our network could predict the probability of which alliance (blue or red) would win a 
+                game given statistics about each team on each alliance throughout the season so far. 
+                <br>
+                <br>
+                The reason we constricted our data to a single season is that while “strong” teams are generally consistently strong, 
+                members and thus skillsets change each year as seniors graduate and teams welcome freshman, so we wanted to have the most 
+                representative data for a team (we wouldn’t want the network to think a team was really good based on the last 4 years and 
+                predict that team winning (like give alliances with that team a high probability of winning) even though they were no longer 
+                a top team in the fifth year). This did bring up the issue of maybe not having enough data for the network to be good, but we went 
+                ahead with that in mind.
+                
+        </div>
+
+        <div class = "ThirdHead">
+            <div class = "ThirdHeadText">
+    
+            <h1>D A T A</h1>
+            <br>
+            <br>
+            </div>
+        </div>
+
+        <div class = "dataintro">
+            <h1>Collecting the Data</h1>
+            <p>We collected our data from <a href="https://www.thebluealliance.com/">The Blue Alliance</a>. This site exists for FRC where 
+                statistics for each team are recorded for all matches at all levels throughout the season. 
+                This database has been around for the past 16 years, or seasons, and for each competition, it has rankings of all the teams at 
+                competitions, data for all the matches played, data on each team, and data on awards received. 
+                For our purposes, we needed to access the data on all the matches played and each team. 
+                However, the data couldn’t be downloaded directly from the website, so we had to access it through an API call. Here's an
+                example of what the data from the website looks like:</p>
+                <br>
+                <img src="ML_Images/bluealliance.png" id="bluealliance">
+                <br>
+                <br>
+
+            <h1>Sample Data</h1>
+            <p>
+                This is some sample data—it is the blue alliance’s scale ownership. 
+                Again, the scale in the 2018 game was the main scoring structure, and essentially the most competitive part of the game. 
+                There isn’t much of a correlation between the points scored or seconds owned and how well the blue alliance won overall. 
+                This could be due to the data points not including lower scores, or that the data set just isn’t big enough. 
+                This was just the data from the first few matches, but it shows an example of one of the features we used. 
+            </p>
+            <br>
+            <img src="ML_Images/sampledata.png" id="sampledata">
+            <br>
+            <br>
+
+            <h1>Formatting the Data</h1>
+            <p>In our dataset, there are 407 matches that make up the training data, and for each match, there are 6 teams and 10 attributes or 
+                properties for each team. So, our data started off by being a 3 dimensional array of matches, teams, and attributes.
+                We had to “flatten the data,” which basically meant making the 6 teams and 10 attributes one dimension of the array 
+                rather than two separate dimensions, so we ended up with a 2D array [470, 60]. See the images below. 
+            </p>
+            <img src="ML_Images/3d.png" id="threed">
+            <img src="ML_Images/2d.png" id="twod">
+
+            <p>
+                The 10 properties of each team that’s included in this data are auto run moving off, auto run scale, auto run switch, scale ownership, 
+                switch ownership, endgame, fouls, defense, and strategy.
+                <br>
+                These 10 properties are important to have in our data because these are the factors that made up the game strategy/setup from the games 
+                we’re pulling data from. The first three properties relate to the autonomous game period and the ownership properties relate to the teleop 
+                game period. The defense and strategy properties aren’t point based, but are important to the nature of 
+                the game. 
+                <br>
+                Our labels for the data are values between 0 and 1 that we calculated by dividing the final blue score by the blue minus 
+                red score. What the results mean is that any value greater than 0.5 would favor the blue alliance winning, with values closer to 1 
+                being a higher chance of winning and values closer to 0.5 indicating a closer match. Similarly, values less than 0.5 would then indicate 
+                the red alliance winning and values closer to 0 would be greater gaps in alliance scores and more clearly defined victories.
+                <br>
+
+            </p>
+        </div>
+
+        <div class = "FourthHead">
+            <div class = "FourthHeadText">
+    
+            <h1>T H E &nbsp; N E T W O R K</h1>
+            <br>
+            <br>
+            </div>
+        </div>
+
+        <div class = "network">
+            <h1>Network Layers</h1>
+            <p> 
+                Since our network needed to take in multiple factors for each team and match to predict a certain outcome, 
+                we opted to configure our network with dense layers. 
+                <br>
+                <br>
+                <strong>
+                We built our model using 5 layers with differing amounts of nodes on each layer. 
+                Our last (output) layer only has one node, because we only want the network to output one value. 
+                This value is between 0 and 1 and should represent the values in our label array. 
+                The closer the network is to 0, the more it’s predicting that the red alliance won and the closer it is to 1, 
+                the more it’s predicting that the blue alliance won. 
+                </strong>
+                <br>
+                <br>
+                Because we had a small quantity of data, we decided to use the <strong>k-fold method</strong>, which consists of splitting the data into 
+                <strong>k-number of partitions</strong>. The model trains on all but 1 partition, and then validates itself on the remaining partition. 
+                This allows the model to make the most of a limited amount of data. Using the k-fold method allows the network to see more 
+                comprehensive data and train better/ have better accuracy across the whole dataset. We were able to get down to a reasonably low loss.
+
+            </p>
+        </div>
+
+
+            
+
+
+
+
+
+
+
+
+
+   
+    </body>
+
+        <footer></footer>
+
+    </body>
+    </html>
