@@ -283,8 +283,8 @@
             </div>
 
             <p>
-                The graphs show that the blue loss and red validation loss center around 0.05 and 0.03 respectively, which is a reasonable loss 
-                for a complex problem like ours.
+                <strong>The graphs show that the blue loss and red validation loss center around 0.05 and 0.03 respectively, which is a reasonable loss 
+                    for a complex problem like ours.</strong>
             </p>
             
         </div>
@@ -296,6 +296,60 @@
             <br>
             <br>
             </div>
+        </div>
+
+        <div class="conclusiondiv">
+            <h1>Implications</h1>
+            <p>
+                In more recent years, robot games have started to incorporate some human players.  
+                Incorporating human players into the network is something that could help boost the accuracy of the predictions and is something that we 
+                would like to also add to the network in the future. 
+                <br>
+                <br>
+                Another implication is the prospect of DC-ing, or disconnecting during the robot game. It’s almost impossible to predict when a robot might 
+                disconnect and this can make or break a game for a team or alliance. Also, robots break a lot. Sometimes 
+                they crash into field objects or even other robots. While they are often built to withstand those impacts, we’ve been 
+                in many situations where we’ve had to perform emergency robot surgery before a game at competitions. Parts can break, go missing, 
+                and sometimes wires even get accidentally cut in the process. So accounting for those factors is really difficult and these would be 
+                pretty hard to incorporate into the network.
+            </p>
+            <br>
+            <h1>Future</h1>
+            <p>
+                If we were to continue developing this project, we would definitely want to explore the possibility of being able to use data 
+                from more than one season. Data from previous seasons also wouldn’t really be useful if we were trying to 
+                predict the best alliance partners during a certain competition because the stats for that season would be the only ones relevant to the 
+                game. Data from a different game wouldn’t hold much weight as compared to data from the current season. However, we could still see if 
+                we could use some properties from previous seasons (maybe not directly related to the game), and have them weighted less overall in the 
+                network so the current season’s data would still hold the most precedence over the networks training and prediction. Doing this would 
+                allow us to have more data points and hopefully create a better network. 
+                <br>
+                <br>
+                Another extension to this project that we would look forward to working on would be creating a similar network/ scouting system for FTC. 
+                We determined that FTC would be harder to make this network for, considering strategy and especially defense aren’t as influential in FTC 
+                games - FTC robots don’t actively try and stop the opposing alliance from scoring and teams can very easily be penalized for trying to. 
+                FTC would already have less data for a season/team so it would be essential that we find a way to incorporate data from other seasons as well.
+
+            </p>
+        </div>
+
+        <div class="footer">
+            <h1>Acknowledgements</h1>
+            <br>
+            <p>
+                Thank you to an ECG alumni, and another Machine Learning student (Nicholas Day and Jefrey Bergl), 
+                who helped us test our model and better understand our results and accuracy. Thank you to Don Smith for your guidance throughout this project.
+                <br>
+                <h3>Sources:</h3>
+                https://github.com/the-blue-alliance/the-blue-alliance-data
+                <br>
+                https://frc-pdr.readthedocs.io/en/latest/analysis/basics_of_analysis.html
+                <br>
+                https://github.com/CrispyBacon1999/frctba/blob/master/tba/tba.py
+                <br>
+                https://www.thebluealliance.com/
+                <br>
+            </p>
         </div>
 
 

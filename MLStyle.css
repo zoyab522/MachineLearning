@@ -35,7 +35,7 @@ div.FourthHead {
     opacity: 0.8;
 }
 
-div.HeadText, div.SecondHeadText, div.ThirdHeadText, div.FourthHeadText, div.FifthHeadText {
+div.HeadText, div.SecondHeadText, div.ThirdHeadText, div.FourthHeadText, div.FifthHeadText, div.SixthHeadText {
     background-color:rgba(12, 12, 12, 0.719);
     background-attachment:fixed;
     background-size: cover;
@@ -73,7 +73,18 @@ div.FifthHead {
     opacity: 0.8;
 }
 
-div.intro, div.Importance, div.scouting, div.dataintro, div.network, div.results, div.datatwo {
+div.SixthHead {
+    background-image:url(ML_Images/conclusions.jpeg);
+    background-repeat: no-repeat;  
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    margin-left: 0px;
+    margin-right: 0px;
+    opacity: 0.8;
+}
+
+div.intro, div.Importance, div.scouting, div.dataintro, div.network, div.results, div.datatwo, div.conclusiondiv {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin: 80px;
     line-height: 25px;
@@ -180,6 +191,14 @@ img#threed, img#twod {
 
   div.container {
       background-color:rgba(0, 0, 0, 0.205)
+  }
+
+  div.footer {
+      background-color: rgba(0, 0, 0, 0.664);
+      color: white;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 80px;
+    line-height: 25px;
   }
 
 
