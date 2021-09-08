@@ -94,8 +94,8 @@
                 The reason we constricted our data to a single season is that while “strong” teams are generally consistently strong, 
                 members and thus skillsets change each year as seniors graduate and teams welcome freshman, so we wanted to have the most 
                 representative data for a team (we wouldn’t want the network to think a team was really good based on the last 4 years and 
-                predict that team winning (like give alliances with that team a high probability of winning) even though they were no longer 
-                a top team in the fifth year). This did bring up the issue of maybe not having enough data for the network to be good, but we went 
+                predict that team winning even though they were no longer 
+                a top team in the fifth year. This did bring up the issue of maybe not having enough data for the network to be good, but we went 
                 ahead with that in mind.
                 
         </div>
@@ -149,9 +149,11 @@
             <center><img src="ML_Images/2d.png" id="twod"></center>
 
             <p>
-                The 10 properties of each team that’s included in this data 
+                <strong>The 10 properties of each team that’s included in this data 
                 are auto run moving off, auto run scale, auto run switch, scale ownership, 
-                switch ownership, endgame, fouls, defense, and strategy. 
+                switch ownership, endgame, fouls, defense, and strategy. </strong>
+                <br>
+                <br>
                 These 10 properties are important to have in our data because these are the factors that made up the game strategy/setup from the games 
                 we’re pulling data from. The first three properties relate to the autonomous game period and the ownership properties relate to the teleop 
                 game period. The defense and strategy properties aren’t point based, but are important to the nature of 
@@ -192,6 +194,7 @@
                 <br>
                 Because we had a small quantity of data, we decided to use the <strong>k-fold method</strong>, which consists of splitting the data into 
                 <strong>k-number of partitions</strong>. The model trains on all but 1 partition, and then validates itself on the remaining partition. 
+                <strong>The network averages the results of each k-fold to reduce the statistical variation between the models. </strong>
                 This allows the model to make the most of a limited amount of data. Using the k-fold method allows the network to see more 
                 comprehensive data and train better/ have better accuracy across the whole dataset. We were able to get down to a reasonably low loss.
         </div>
@@ -220,6 +223,11 @@
                 the neural network continued to improve, as both losses start from a lower position. Fold 3 is interesting because the blue loss 
                 seems to start from higher point there, but the scale is actually much smaller. In Folds 4 and 5, the model also appears to overfit, 
                 as the losses actually do start higher. 
+            </p>
+            <h1>Accuracy</h1>
+            <p></p>
+            <p>
+                <img src="ML_Images/messagetxt.png" id="accuracy">
             </p>
             <br>
             <br>
